@@ -1,0 +1,6 @@
+[submodule "ThirdParty/Binaries"]
+	path = ThirdParty/Binaries
+	url = https://github.com/TechnologicalPizza/GameBinaries
+[submodule "ThirdParty/GeneralShare"]
+	path = ThirdParty/GeneralShare
+	url = https://github.com/TechnologicalPizza/GeneralShare
