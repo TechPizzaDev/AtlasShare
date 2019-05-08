@@ -1,25 +1,21 @@
-﻿using MonoGame.Imaging;
-using System;
+﻿using System.IO;
 
 namespace AtlasShare
 {
-    public class AtlasImage : IDisposable
+    public class AtlasImage
     {
-        public Image Image { get; }
+        public FileInfo File { get; }
         public string Tag { get; }
 
-        public int Width => Image.Width;
-        public int Height => Image.Height;
+        public int Width { get; }
+        public int Height { get; }
 
-        public AtlasImage(Image image, string tag)
+        public AtlasImage(FileInfo image, int width, int height, string tag)
         {
-            Image = image;
+            File = image;
             Tag = tag;
-        }
-
-        public void Dispose()
-        {
-            Image.Dispose();
+            Width = width;
+            Height = height;
         }
     }
 }
