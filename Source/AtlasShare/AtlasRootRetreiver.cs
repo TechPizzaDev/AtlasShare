@@ -1,5 +1,6 @@
 ﻿using GeneralShare;
-using MonoGame.Imaging;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -65,8 +66,8 @@ namespace AtlasShare
                     !_supportedImgExtensions.Contains(file.Extension))
                     continue;
 
-                var img = new Image(file.OpenRead());
-                if (img.Info != null && img.Info.IsValid())
+                var img = Image.Identify(file.OpenRead());
+                if (img != null)
                 {
                     string relativeImgPath = PathHelper.GetNormalizedPath(PathHelper.GetRelativePath(_directory, file));
                     relativeImgPath = Path.ChangeExtension(relativeImgPath, null);
@@ -74,14 +75,11 @@ namespace AtlasShare
                     if (!desc.IncludeRootName)
                     {
                         int firstSlash = relativeImgPath.IndexOf('/');
-                        if(firstSlash != -1)
+                        if (firstSlash != -1)
                             relativeImgPath = relativeImgPath.Substring(firstSlash + 1);
                     }
-                    
-                    batch.Images.Add(new AtlasImage(img, relativeImgPath));
+                    batch.Images.Add(new AtlasImage(file, img.Width, img.Height, relativeImgPath));
                 }
-                else
-                    img.Dispose();
             }
 
             foreach (var subDir in dir.EnumerateDirectories("*", SearchOption.TopDirectoryOnly))
