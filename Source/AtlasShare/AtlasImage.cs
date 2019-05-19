@@ -5,15 +5,15 @@ namespace AtlasShare
     public class AtlasImage
     {
         public FileInfo File { get; }
-        public string Tag { get; }
+        public string RelativePath { get; }
 
         public int Width { get; }
         public int Height { get; }
 
-        public AtlasImage(FileInfo image, int width, int height, string tag)
+        public AtlasImage(FileInfo image, string relativePath, int width, int height)
         {
             File = image;
-            Tag = tag;
+            RelativePath = relativePath;
             Width = width;
             Height = height;
         }

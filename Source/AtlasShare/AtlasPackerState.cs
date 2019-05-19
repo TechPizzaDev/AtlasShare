@@ -65,13 +65,9 @@ namespace AtlasShare
             foreach(var free in Packer.FreeRectangles)
             {
                 if (free.W == Packer.BinWidth)
-                {
                     Height -= free.H;
-                }
                 else if (free.H == Packer.BinHeight)
-                {
                     Width -= free.W;
-                }
             }
         }
 

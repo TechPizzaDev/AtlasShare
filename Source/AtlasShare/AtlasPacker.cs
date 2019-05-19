@@ -9,7 +9,19 @@ namespace AtlasShare
 
         public int MaxSize { get; }
         public ImageSpacing Spacing { get; }
+
         public int PackCount => _states.Count + _singles.Count;
+        
+        public int TotalItemCount
+        {
+            get
+            {
+                int count = _singles.Count;
+                foreach (var state in _states)
+                    count += state.Items.Count;
+                return count;
+            }
+        }
 
         public AtlasPacker(int maxSize, ImageSpacing spacing)
         {

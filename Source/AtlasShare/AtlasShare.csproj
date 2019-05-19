@@ -41,36 +41,20 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-<<<<<<< HEAD
-=======
-    </Reference>
-    <Reference Include="SixLabors.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\SixLabors.Core.1.0.0-beta0007\lib\netstandard2.0\SixLabors.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="SixLabors.ImageSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\SixLabors.ImageSharp.1.0.0-beta0006\lib\net472\SixLabors.ImageSharp.dll</HintPath>
->>>>>>> 1826ea38f1c40b69410c7b7b0c373cdaa65defce
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\System.Memory.4.5.2\lib\netstandard2.0\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\SixLabors\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-<<<<<<< HEAD
-      <HintPath>..\..\..\..\packages\System.Numerics.Vectors.4.6.0-preview4.19212.13\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <HintPath>..\..\..\SixLabors\packages\System.Numerics.Vectors.4.6.0-preview5.19224.8\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0-preview4.19212.13\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-=======
-      <HintPath>..\..\..\..\packages\System.Numerics.Vectors.4.6.0-preview5.19224.8\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0-preview5.19224.8\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
->>>>>>> 1826ea38f1c40b69410c7b7b0c373cdaa65defce
+      <HintPath>..\..\..\SixLabors\packages\System.Runtime.CompilerServices.Unsafe.4.6.0-preview6.19259.10\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -84,6 +68,7 @@
     <Compile Include="AtlasRootDescription.cs" />
     <Compile Include="AtlasRootRetreiver.cs" />
     <Compile Include="AtlasSerializer.cs" />
+    <Compile Include="Fonts\GlyphCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rect.cs" />
     <Compile Include="RectPacker.cs" />
@@ -97,6 +82,30 @@
     <ProjectReference Include="..\..\..\GeneralShare\GeneralShare.Core\GeneralShare.Core.csproj">
       <Project>{5c2de6a1-31de-4b78-9808-547dd294f55c}</Project>
       <Name>GeneralShare.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SixLabors\Core\src\SixLabors.Core\SixLabors.Core.csproj">
+      <Project>{3e250f12-b226-4197-9a49-2409a985d259}</Project>
+      <Name>SixLabors.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SixLabors\Fonts\src\SixLabors.Fonts\SixLabors.Fonts.csproj">
+      <Project>{45593446-3747-4729-9f15-1e16c7ac7312}</Project>
+      <Name>SixLabors.Fonts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SixLabors\ImageSharp\src\ImageSharp.Drawing\SixLabors.ImageSharp.Drawing.csproj">
+      <Project>{0b58bacc-6f8d-4b59-bd9e-974d54adb14f}</Project>
+      <Name>SixLabors.ImageSharp.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SixLabors\ImageSharp\src\ImageSharp\SixLabors.ImageSharp.csproj">
+      <Project>{4f7731e2-b769-4c83-8ff5-82b153df5091}</Project>
+      <Name>SixLabors.ImageSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SixLabors\Shapes\src\SixLabors.Shapes.Text\SixLabors.Shapes.Text.csproj">
+      <Project>{405166e1-1040-456b-8f9c-7f9ddfc633be}</Project>
+      <Name>SixLabors.Shapes.Text</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SixLabors\Shapes\src\SixLabors.Shapes\SixLabors.Shapes.csproj">
+      <Project>{edbdf2da-4265-4f03-940c-d60552638481}</Project>
+      <Name>SixLabors.Shapes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
